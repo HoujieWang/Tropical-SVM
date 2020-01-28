@@ -5,34 +5,34 @@ library(Parallel)
 # Number of leaves of each tree
 N = 5
 
-# Dimension of a tree after transformed into vector
+# Dimension of a tree after transformed into a vector
 d = choose(N, 2)
 
-# Load the data
+# We first begin with a simluated data set at C=6
 P  = matrix(unlist(lapply(read.tree("LittleTree6A.txt"), function(x){cophenetic.phylo(x)[upper.tri(cophenetic.phylo(x))]})), ncol = d, byrow = T)
 Q  = matrix(unlist(lapply(read.tree("LittleTree6B.txt"), function(x){cophenetic.phylo(x)[upper.tri(cophenetic.phylo(x))]})), ncol = d, byrow = T)
 
-############################################## All Possible Assignments for Theorem 4.8 ############################################################
+############################################## All Possible Assignments for All Theorems ############################################################
 
+# Theorem 4.8
 all_i1i2j1j2 = expand.grid(1:d, 1:d, 1:d, 1:d)
 all_i1i2j1j2 = all_i1i2j1j2[apply(all_i1i2j1j2, 1, function(x){return(length(unique(x)) == length(x))}), ]
 all_i1i2j1j2 = as.list(as.data.frame(t(all_i1i2j1j2)))
 
-############################################## All Possible Assignments for Theorem 4.10 ############################################################
-
+# Theorem 4.10
 all_ijl =  expand.grid(1:d, 1:d, 1:d)
 all_ijl = all_ijl[-which(all_ijl[,1] == all_ijl[,2]), ]
 all_ijl = all_ijl[-which(all_ijl[,1] == all_ijl[,3]), ]
 all_ijl = all_ijl[-which(all_ijl[,2] == all_ijl[,3]), ]
 all_ijl1 = lapply(as.list(as.data.frame(t(all_ijl))), function(x){return(c(x, x[1]))})
 
-############################################## All Possible Assignments for Theorem 4.11 ############################################################
+# Theorem 4.11
 
 all_ij = expand.grid(1:d, 1:d)
 all_ij = all_ij[-which(all_ij[, 1] == all_ij[, 2]), ]
 all_ij = lapply(as.list(as.data.frame(t(all_ij))), function(x){return(c(x, rev(x)))})
 
-############################################## All Possible Assignments for Theorem 4.12 ############################################################
+# Theorem 4.12 
 
 all_i1i2j = expand.grid(1:d, 1:d, 1:d)
 all_i1i2j = all_i1i2j[-which(all_i1i2j[,1] == all_i1i2j[,2]), ]
@@ -40,7 +40,7 @@ all_i1i2j = all_i1i2j[-which(all_i1i2j[,1] == all_i1i2j[,3]), ]
 all_i1i2j = all_i1i2j[-which(all_i1i2j[,2] == all_i1i2j[,3]), ]
 all_i1i2j = lapply(as.list(as.data.frame(t(all_i1i2j))), function(x){return(c(x, x[2]))})
 
-############################################################## All Algorithms #######################################################################
+############################################################## Algorithms 1~5 #######################################################################
 
 # Algorithm 1~4 output 0 if size of feasible data set for P and Q is smaller than 10
 algorithm1 = function(assignment, P, Q){
