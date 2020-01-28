@@ -1,3 +1,7 @@
+# Before you use, please make sure you have package lpSolve installed.
+# The function input data should be a feature matrix that contains trees from both P and Q. You can write rbind(P, Q) instead.
+# np and nq are data size of P and Q
+# It is recommended to set flatten = FALSE.
 lp_solver = function(data, assignment, np, nq, flatten){
   ip = assignment[1]; jp = assignment[2]; iq = assignment[3]; jq = assignment[4] 
   d = ncol(data)
