@@ -190,6 +190,7 @@ algorithm5 = function(omega, tst_P, tst_Q, assignment){
 }
 
 ############################################################# Test for Accuracy #####################################################################
+# We employed parallel computing function here for the convenience of larger data sets.
 
 # Accuracy for Theorem 4.8
 result_4.8 = mclapply(all_i1i2j1j2, function(x){algorithm1(x, P, Q)})
