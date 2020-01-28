@@ -14,25 +14,25 @@ Q  = matrix(unlist(lapply(read.tree("LittleTree6B.txt"), function(x){cophenetic.
 
 ############################################## All Possible Assignments for All Theorems ############################################################
 
-# Theorem 4.8
+# Theorem 4.10
 all_i1i2j1j2 = expand.grid(1:d, 1:d, 1:d, 1:d)
 all_i1i2j1j2 = all_i1i2j1j2[apply(all_i1i2j1j2, 1, function(x){return(length(unique(x)) == length(x))}), ]
 all_i1i2j1j2 = as.list(as.data.frame(t(all_i1i2j1j2)))
 
-# Theorem 4.10
+# Theorem 4.11
 all_ijl =  expand.grid(1:d, 1:d, 1:d)
 all_ijl = all_ijl[-which(all_ijl[,1] == all_ijl[,2]), ]
 all_ijl = all_ijl[-which(all_ijl[,1] == all_ijl[,3]), ]
 all_ijl = all_ijl[-which(all_ijl[,2] == all_ijl[,3]), ]
 all_ijl1 = lapply(as.list(as.data.frame(t(all_ijl))), function(x){return(c(x, x[1]))})
 
-# Theorem 4.11
+# Theorem 4.12
 
 all_ij = expand.grid(1:d, 1:d)
 all_ij = all_ij[-which(all_ij[, 1] == all_ij[, 2]), ]
 all_ij = lapply(as.list(as.data.frame(t(all_ij))), function(x){return(c(x, rev(x)))})
 
-# Theorem 4.12 
+# Theorem 4.13
 
 all_i1i2j = expand.grid(1:d, 1:d, 1:d)
 all_i1i2j = all_i1i2j[-which(all_i1i2j[,1] == all_i1i2j[,2]), ]
@@ -192,18 +192,18 @@ algorithm5 = function(omega, tst_P, tst_Q, assignment){
 ############################################################# Test for Accuracy #####################################################################
 # We employed parallel computing function here for the convenience of larger data sets.
 
-# Accuracy for Theorem 4.8
+# Accuracy for Theorem 4.10
 result_4.8 = mclapply(all_i1i2j1j2, function(x){algorithm1(x, P, Q)})
 sapply(result_4.8[sapply(result_4.8, function(x){class(x) == "list"})], function(x){algorithm5(x[[6]], x[[3]], x[[4]], x[[7]])})
 
-# Accuracy for Theorem 4.10
+# Accuracy for Theorem 4.11
 result_4.10 = mclapply(all_ijl1, function(x){algorithm2(x, P, Q)})
 sapply(result_4.10[sapply(result_4.10, function(x){class(x) == "list"})], function(x){algorithm5(x[[6]], x[[3]], x[[4]], x[[7]])})
 
-# Accuracy for Theorem 4.11
+# Accuracy for Theorem 4.12
 result_4.11 = mclapply(all_i1i2j, function(x){algorithm3(x, P, Q)})
 sapply(result_4.11[sapply(result_4.11, function(x){class(x) == "list"})], function(x){algorithm5(x[[6]], x[[3]], x[[4]], x[[7]])})
 
-# Accuracy for Theorem 4.12
+# Accuracy for Theorem 4.13
 result_4.12 = mclapply(all_ij, function(x){algorithm4(x, P, Q)})
 sapply(result_4.12[sapply(result_4.12, function(x){class(x) == "list"})], function(x){algorithm5(x[[6]], x[[3]], x[[4]], x[[7]])})
