@@ -14,7 +14,7 @@ Q  = matrix(unlist(lapply(read.tree("LittleTree6B.txt"), function(x){cophenetic.
 
 ############################################## All Possible Assignments for All Theorems ############################################################
 
-# Theorem 4.10
+# Theorem 4.9
 all_i1i2j1j2 = expand.grid(1:d, 1:d, 1:d, 1:d)
 all_i1i2j1j2 = all_i1i2j1j2[apply(all_i1i2j1j2, 1, function(x){return(length(unique(x)) == length(x))}), ]
 all_i1i2j1j2 = as.list(as.data.frame(t(all_i1i2j1j2)))
@@ -192,7 +192,7 @@ algorithm5 = function(omega, tst_P, tst_Q, assignment){
 ############################################################# Test for Accuracy #####################################################################
 # We employed parallel computing function here for the convenience of larger data sets.
 
-# Accuracy for Theorem 4.10
+# Accuracy for Theorem 4.9
 result_4.8 = mclapply(all_i1i2j1j2, function(x){algorithm1(x, P, Q)})
 sapply(result_4.8[sapply(result_4.8, function(x){class(x) == "list"})], function(x){algorithm5(x[[6]], x[[3]], x[[4]], x[[7]])})
 
