@@ -10,7 +10,7 @@ Each file contains 100 trees. The file names indicate the C value when it was ge
 ```{r}
 LittleTree6A.txt
 ```
-It means that the 100 trees in this file are produced at C=6 and is labeled as category A.
+It means that the 100 trees in this file are produced at C=6 and labeled as category A.
 ### Algorithm1~5.R
 These algorithms are Algorithms 1~5, respectively, in Section 5 in the reference.
 ### Sample.R
