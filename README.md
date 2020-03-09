@@ -3,7 +3,7 @@ This is R code for computing a tropical support vector machine SVM) for classifi
 ## Reference
 https://arxiv.org/abs/2003.00677
 ## Installation
-To run this code we need the [ape](https://cran.r-project.org/web/packages/ape/index.html), [lpSolve](https://cran.r-project.org/web/packages/lpSolve/index.html) and [parallel](https://CRAN.R-project.org/view=HighPerformanceComputing) packages. 
+To run this code we need the [ape](https://cran.r-project.org/web/packages/ape/index.html), [lpSolve](https://cran.r-project.org/web/packages/lpSolve/index.html), [parallel](https://CRAN.R-project.org/view=HighPerformanceComputing), [gtools](https://cran.r-project.org/web/packages/gtools/index.html), [ggplot2](https://ggplot2.tidyverse.org) and [e1071](https://cran.r-project.org/web/packages/e1071/index.html).
 ## Contents
 ### Trees
 Each file contains 100 trees. The file names indicate the C value when it was generated and its categories (A or B). For example:
