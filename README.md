@@ -1,7 +1,7 @@
 # Tropical-SVM
 This is R code for computing a tropical support vector machine SVM) for classification over the tropical projective torus.  We can also apply this code for classifying gene trees into two classes.  A tropical SVM is, like a classical SVM, a tropical hyperplane which maximizes the minimum distance of the data points to the tropical hyperplane to separate the data points.  
 ## Reference
-Our arxiv link will be posted here (TBA)
+https://arxiv.org/abs/2003.00677
 ## Installation
 To run this code we need the [ape](https://cran.r-project.org/web/packages/ape/index.html), [lpSolve](https://cran.r-project.org/web/packages/lpSolve/index.html) and [parallel](https://CRAN.R-project.org/view=HighPerformanceComputing) packages. 
 ## Contents
