@@ -10,7 +10,7 @@ This folder contains all the data sets with training and testing data set pre-se
 #### Genetree Data/data_matrix_list_15%.RData
 When loaded in R, this file will be named "data_matrix_list", which is a list of length 12 with each sublist containing 10 data sets with each created by randomly choosing 15% data points as tesing data set from one overall data set created by [Mesquite](http://www.mesquiteproject.org) at one of 12 different C values. 
 ### Assignment
-This file contains all all assignments (asgn_1~4_15~25%.RData) of each algorithm and each percentage of test data when the maximum accuracy is reached. 
+This file contains all all assignments (asgn_1\~4_15\~25%.RData) of each algorithm and each percentage of test data when the maximum accuracy is reached. 
 #### asgn_1_15%.Rdata
 When loaded in R, this file will be named "assignment1", which is a list of length 12 with each element a matrix of 10 rows. Each row is an assignment at which algorithm1 outputs the best classification accuracy for a corresponding testing data set. Other files named starting by "asgn" correspond to the maximum assignment table of other algorithms.
 ### Algorithm1~4.R
