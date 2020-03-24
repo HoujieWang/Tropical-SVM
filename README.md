@@ -18,4 +18,4 @@ These algorithms are Algorithms 1~4, respectively, in Section 5 in the reference
 ### graph producer.R
 This R script allows users to reprocude the graphs in section 6 by simplying changing the size of tesing data size. To run this script, please make sure all required packages installed and Rdata put in the directory.
 ### unbounded.RData
-When loaded in R, this file will be named "data", which provideds an example that the objective function is not an upper bound when C is smaller than 0.00625.
+When loaded in R, this file will be named "data", which allows users to verify that the objective function is not an upper bound when C is smaller than 0.00625.
