@@ -3,7 +3,7 @@ This is R code for computing a tropical support vector machine for classificatio
 ## Reference
 https://arxiv.org/abs/2003.00677
 ## Installation
-To run this code please put the Rdata in Genetree data and assignment in your R directory and also make sure that [ape](https://cran.r-project.org/web/packages/ape/index.html), [lpSolve](https://cran.r-project.org/web/packages/lpSolve/index.html), [parallel](https://CRAN.R-project.org/view=HighPerformanceComputing), [gtools](https://cran.r-project.org/web/packages/gtools/index.html), [ggplot2](https://ggplot2.tidyverse.org) and [e1071](https://cran.r-project.org/web/packages/e1071/index.html) packages are installed.
+To run this code please put the Rdata in [Genetree data](https://github.com/HoujieWang/Tropical-SVM/tree/master/Genetree%20data) and [assignment](https://github.com/HoujieWang/Tropical-SVM/tree/master/assignment) in your R directory and also make sure that [ape](https://cran.r-project.org/web/packages/ape/index.html), [lpSolve](https://cran.r-project.org/web/packages/lpSolve/index.html), [parallel](https://CRAN.R-project.org/view=HighPerformanceComputing), [gtools](https://cran.r-project.org/web/packages/gtools/index.html), [ggplot2](https://ggplot2.tidyverse.org) and [e1071](https://cran.r-project.org/web/packages/e1071/index.html) packages are installed.
 ## Contents
 ### Genetree Data
 This folder contains all the data sets with training and testing data set pre-separated(data_matrix_list_15~25%.RData).
