@@ -139,7 +139,7 @@ graph_producer = function(ntst){
   }
   
   # Load the data and assignments
-  load(paste("data_matrix_list_",ntst, "%.RData", sep = ""))
+  load(paste("data_",ntst, "%.RData", sep = ""))
   for (i in paste(paste("asgn_", 1: 4, "_", sep = ""), ntst, "%.RData", sep = "")){load(i)}
   
   accuracy3 = c()
@@ -206,6 +206,6 @@ graph_producer = function(ntst){
 }
 
 # Specify the percent of test data, please choose among 15, 20 and 25.
-graph_producer(ntst = 25)
+graph_producer(ntst = 15)
 
 
