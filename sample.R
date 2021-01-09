@@ -16,6 +16,6 @@ all_assignment <- permutations(n = ncol(data), r = 4)
 # We've performed experiment for the data set on Github. For a quick graphical evaluation, please run graph_producer.R
 # beta can be set 1 as default and varying beta does not make obvious changes in performance 
 # method_ind takes value from 1 to 70 (same for algorithm 2~4), where each represents a classification method
-# User can set method_ind = 1: 70 to automatically try all possible methods
+# User can set method_ind = 1: 70 to automatically compute the prediction accuracy in terms of 70 different methods
 # So far, this algorithm only supports the case where two categories contain the same number of points
 algorithm1(assignment = 1: 4, data, tst_data, n, ntst, beta = 1, method_ind = 1: 70)
